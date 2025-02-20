@@ -30,8 +30,9 @@ class VersionManager {
     }
 
     public function gitOperations($newVersion) {
-        exec('git add composer.json');
-        exec("git commit -m 'Bump version to $newVersion'");
+        $date = date('Y-m-d');
+        exec('git add -A');
+        exec("git commit -m 'Version $newVersion - $date'");
         exec("git tag $newVersion");
         exec('git push');
         exec('git push --tags');
