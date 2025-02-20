@@ -1,0 +1,16 @@
+{
+    "name": "rpurinton/tagit",
+    "description": "DevOps Utility",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Russell Purinton",
+            "email": "russell.purinton@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RPurinton\\Tagit\\": "src/"
+        }
+    }
+}
