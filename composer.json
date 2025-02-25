@@ -1,7 +1,7 @@
 {
     "name": "rpurinton/tagit",
     "description": "DevOps Utility",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "authors": [
         {
             "name": "Russell Purinton",
@@ -12,5 +12,6 @@
         "psr-4": {
             "RPurinton\\Tagit\\": "src/"
         }
-    }
+    },
+    "type": "project"
 }
