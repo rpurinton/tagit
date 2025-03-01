@@ -31,8 +31,8 @@ class VersionManager {
 
     public function gitOperations($newVersion) {
         $date = date('Y-m-d');
-        exec('COMPOSER_ALLOW_SUPERUSER=1 composer upgrade');
-        exec('COMPOSER_ALLOW_SUPERUSER=1 composer bump');
+        exec('COMPOSER_HOME="$PWD" COMPOSER_ALLOW_SUPERUSER=1 composer upgrade');
+        exec('COMPOSER_HOME="$PWD" COMPOSER_ALLOW_SUPERUSER=1 composer bump');
         exec('git add -A');
         exec("git commit -m 'Version $newVersion - $date'");
         exec("git tag $newVersion");
