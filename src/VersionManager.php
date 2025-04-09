@@ -31,7 +31,10 @@ class VersionManager {
                 echo "Version not found in package.json.\n";
                 exit(1);
             }
-            // Sync with composer version
+            // Sync with composer version or use package version
+            if(!$newVersion) {
+                $newVersion = $this->incrementVersion($packageData['version']);
+            }
             $packageData['version'] = $newVersion;
             file_put_contents($packageFile, json_encode($packageData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
         }
@@ -48,7 +51,6 @@ class VersionManager {
 
         if (file_exists('package.json')) {
             exec('npm upgrade');
-            exec('npm version patch');
         }
 
         exec('git add -A');
